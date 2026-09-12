@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Alur Survey 63</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script>
+
+    const geojsonData = {"type": "FeatureCollection", "features": [{"type": "Feature", "bbox": null, "geometry": {"type": "MultiPolygon", "coordinates": [[[[76.03823938553641, 14.50507380564513], [76.03971083096013, 14.502691015418838], [76.03660653725144, 14.500791928838565], [76.0341976768784, 14.504737966035421], [76.0352489330719, 14.505331160054764], [76.03540393007331, 14.505322223636643], [76.03698019677087, 14.505099471779202], [76.03811375111829, 14.50507049917169], [76.03823938553641, 14.50507380564513]]]]}, "properties": null}], "crs": null, "bbox": null};
+
+    const map = L.map('map');
+
+    L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+            attribution: '&copy; OpenStreetMap contributors'
+        }
+    ).addTo(map);
+
+    const parcel = L.geoJSON(
+        geojsonData,
+        {
+            onEachFeature: function(feature, layer) {
+
+                layer.bindPopup(
+                    "<b>Alur</b><br>" +
+                    "Survey No: 63"
+                );
+
+            }
+        }
+    ).addTo(map);
+
+    map.fitBounds(parcel.getBounds());
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "target": {
+    "district": "Davangere",
+    "taluk": "Davangere",
+    "village": "Shamanuru"
+  },
+  "api": "https://mobservice.sujala3lri.karnataka.gov.in/api",
+  "next_step": [
+    "Resolve District ID",
+    "Resolve Taluk ID",
+    "Resolve Hobli ID",
+    "Resolve Village ID",
+    "Retrieve survey numbers",
+    "Retrieve cadastral geometry",
+    "Retrieve Bhoomi data"
+  ]
+}
